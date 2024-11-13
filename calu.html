@@ -1,0 +1,64 @@
+<html>
+<head>
+<title>PP2</title>
+<script language="JavaScript">
+function doclear()
+{
+thisform.t1.value=" ";
+thisform.t2.value=" ";
+thisform.t3.value=" ";
+}
+function docalcy(r)
+{
+p=parseInt(thisform.t1.value);
+q=parseInt(thisform.t2.value);
+switch(r)
+{
+case '+':
+thisform.t3.value=p+q;
+break;
+case '-':
+thisform.t3.value=p-q;
+break;
+case '*':
+thisform.t3.value=p*q;
+break;
+case '/':
+thisform.t3.value=p/q;
+break;
+}
+}
+</script>
+</head>
+<body bgcolor="pink">
+<form name="thisform">
+<center>
+<br><font face="Comic Sans MS" size="50" color="#9900cc">
+<u><b>Simple Calcluator</b></u>
+<hr></font>
+<img src="D:\New folder\calculator.jpg" height="200" width="200">
+<center>
+<font face="Latha" size="20" color="#ff0066">
+Enter 'A' Value:<input type="text" style="border:3px solid black;height:25px;"
+name="t1"><br>
+Enter 'B' Value:<input type="text" style="border:3px solid black;height:25px;"
+name="t2"><br>
+Result Value :<input type="text" style="border:3px solid black;height:25px;"
+name="t3">
+</font></center>
+<hr size="3"><br>
+<input type="button" style="border-color:red;width:70px;height:40px;" value="ADD"
+ox)">
+<input type="button" style="border-color:red;width:70px;height:40px;" value="SUB"
+onClick="docalcy('-')">
+<input type="button" style="border-color:red;width:70px;height:40px;" value="MUL"
+onClick="docalcy('*')">
+<input type="button" style="border-color:red;width:70px;height:40px;" value="DIV"
+onClick="docalcy('/')">
+<input type="button" style="border-color:red;width:70px;height:40px;" value="CLEAR"
+onClick="doclear()"><br><br>
+<hr>
+</center>
+</form>
+</body>
+</html>s

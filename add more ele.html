@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Web Page with Slider</title>
+    <style>
+        /* Internal CSS Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 20px;
+            text-align: center;
+        }
+
+        nav {
+            margin: 10px 0;
+        }
+
+        nav a {
+            margin: 0 15px;
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #45a049;
+        }
+
+        .slider {
+            position: relative;
+            width: 80%;
+            max-width: 600px;
+            margin: 20px auto;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slide {
+            min-width: 100%;
+            box-sizing: border-box;
+        }
+
+        .slide img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .controls {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .controls label {
+            margin: 0 10px;
+            cursor: pointer;
+            color: #333;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>My Enhanced Web Page</h1>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <div class="slider">
+        <div class="slides">
+            <div class="slide active" id="slide1">
+                <img src="image1.jpg" alt="Image 1">
+            </div>
+            <div class="slide" id="slide2">
+                <img src="image2.jpg" alt="Image 2">
+            </div>
+            <div class="slide" id="slide3">
+                <img src="image3.jpg" alt="Image 3">
+            </div>
+        </div>
+        <div class="controls">
+            <label>
+                <input type="radio" name="slider" onclick="showSlide(1)" checked> Slide 1
+            </label>
+            <label>
+                <input type="radio" name="slider" onclick="showSlide(2)"> Slide 2
+            </label>
+            <label>
+                <input type="radio" name="slider" onclick="showSlide(3)"> Slide 3
+            </label>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 My Enhanced Web Page. All rights reserved.</p>
+    </footer>
+
+    <script>
+        let currentSlide = 1;
+
+        function showSlide(slideNumber) {
+            const slides = document.querySelectorAll('.slide');
+            const totalSlides = slides.length;
+
+            // Hide all slides
+            slides.forEach((slide, index) => {
+                slide.classList.remove('active');
+                if (index === slideNumber - 1) {
+                    slide.classList.add('active');
+                }
+            });
+
+            // Update the transform property of the slides container
+            const slidesContainer = document.querySelector('.slides');
+            slidesContainer.style.transform = `translateX(-${(slideNumber - 1) * 100}%)`;
+        }
+    </script>
+</body>
+</html>

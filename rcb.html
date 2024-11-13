@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Web Page with CSS</title>
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header-section">
+        <h1 class="main-heading">Welcome to My Webpage</h1>
+        <p class="sub-heading">A simple page styled with external CSS</p>
+    </header>
+
+    <!-- Navigation Section -->
+    <nav class="nav-bar">
+        <ul class="nav-list">
+            <li><a href="#home" class="nav-item">Home</a></li>
+            <li><a href="#about" class="nav-item">About</a></li>
+            <li><a href="#services" class="nav-item">Services</a></li>
+            <li><a href="#contact" class="nav-item">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Content Section -->
+    <section class="content-section">
+        <div class="about" id="about">
+            <h2 class="section-heading">About Us</h2>
+            <p class="text-content">We are a team of passionate developers building creative websites.</p>
+        </div>
+        <div class="services" id="services">
+            <h2 class="section-heading">Our Services</h2>
+            <p class="text-content">We offer a wide range of web development and design services.</p>
+        </div>
+    </section>
+
+    <!-- Image Section -->
+    <section class="image-section">
+        <img src="C:\Users\dkar7\OneDrive\Pictures\Saved Pictures" alt="Sample Image" class="sample-image">
+    </section>
+
+    <!-- Button Section -->
+    <div class="button-section">
+        <button class="primary-button">Click Me</button>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer-section">
+        <p class="footer-text">© 2024 My Webpage. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Header styles */
+.header-section {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+.main-heading {
+    font-size: 2em;
+    font-weight: bold;
+}
+.sub-heading {
+    font-size: 1.2em;
+    font-style: italic;
+}
+
+/* Navigation bar styles */
+.nav-bar {
+    background-color: #333;
+}
+.nav-list {
+    list-style-type: none;
+    text-align: center;
+    padding: 10px 0;
+}
+.nav-item {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: inline-block;
+}
+.nav-item:hover {
+    background-color: #575757;
+}
+
+/* Content section styles */
+.content-section {
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+.section-heading {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+.text-content {
+    font-size: 1em;
+    color: #333;
+    line-height: 1.5;
+}
+
+/* Image section styles */
+.image-section {
+    text-align: center;
+    padding: 20px;
+}
+.sample-image {
+    width: 300px;
+    height: auto;
+    border: 3px solid #4CAF50;
+}
+
+/* Button styles */
+.button-section {
+    text-align: center;
+    padding: 20px;
+}
+.primary-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.primary-button:hover {
+    background-color: #45a049;
+}
+
+/* Footer styles */
+.footer-section {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+.footer-text {
+    font-size: 0.9em;
+}

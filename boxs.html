@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mouse Move Example</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: Arial, sans-serif;
+      transition: background-color 0.2s;
+    }
+    h1 {
+      position: absolute;
+      color: white;
+      text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    }
+  </style>
+</head>
+<body>
+  <h1>Move your mouse!</h1>
+  <script>
+    document.addEventListener("mousemove", function(event) {
+      // Get the mouse coordinates
+      const x = event.clientX;
+      const y = event.clientY;
+      
+      // Calculate color based on mouse position
+      const red = Math.round((x / window.innerWidth) * 255);
+      const green = Math.round((y / window.innerHeight) * 255);
+      const blue = 150; // Fixed value for blue
+      
+      // Set background color
+      document.body.style.backgroundColor = rgb(${red}, ${green}, ${blue});
+    });
+  </script>
+</body>
+</html>

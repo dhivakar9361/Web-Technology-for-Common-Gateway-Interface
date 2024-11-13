@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration</title>
+    <style>
+        body {
+            background-color: yellow;
+            display: flex;
+            flex-direction: column; 
+            align-items: center; 
+            height: 100vh; 
+            margin: 0; 
+        }
+        h1 {
+            margin-top: 20px; 
+            text-align: center; 
+        }
+        form {
+            text-align: center; 
+            border: 1px solid #ccc; 
+            padding: 20px; 
+            border-radius: 5px; 
+            background-color: white; 
+            margin-top: 20px; 
+        }
+    </style>
+</head>
+<body>
+    <h1>SAVEETHA SCHOOL OF ENGINEERING</h1>
+    <h2> GARUDA </h2>
+    <form action="#" method="post">
+        <label for="Name">Name:</label><br>
+        <input type="text" id="Name" name="Name" required><br><br>
+
+        <label for="REG NO">REG NO:</label><br>
+        <input type="text" id="REG NO" name="REG NO" required><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="phone">Phone Number:</label><br>
+        <input type="tel" id="phone" name="phone" required><br><br>
+     
+         <label for="Name">College Name:</label><br>
+        <input type="text" id="Name" name="Name" required><br><br>
+
+        <label for="branch">BRANCH:</label><br>
+        <select id="BRANCH" name="branch" required>
+            <option value="">Select a branch</option>
+            <option value="CSE">CSC</option>
+            <option value="IT">IT</option>
+            <option value="ECE">ECE</option>
+            <option value="AIML">AIML</option>
+            <option value="AIDS">AIDS</option>
+            <option value="MECH">MECH</option>
+            <option value="BIO MED">BIO MED</option>
+        </select><br><br>
+
+        <input type="submit" value="Register">
+    </form>
+</body>
+</html>

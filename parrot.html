@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Over Example</title>
+    <style>
+        #hover-box {
+            width: 200px;
+            height: 200px;
+            background-color: lightblue;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2em;
+            color: #333;
+            border: 2px solid #666;
+            margin: 50px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="hover-box">Hover over me!</div>
+
+<script>
+    const hoverBox = document.getElementById('hover-box');
+
+    // Event listener for mouse over
+    hoverBox.addEventListener('mouseover', function() {
+        hoverBox.style.backgroundColor = 'pink';
+        hoverBox.textContent = 'Mouse is over!';
+    });
+
+    // Event listener for mouse out
+    hoverBox.addEventListener('mouseout', function() {
+        hoverBox.style.backgroundColor = 'lightblue';
+        hoverBox.textContent = 'Hover over me!';
+    });
+</script>
+
+</body>
+</html>

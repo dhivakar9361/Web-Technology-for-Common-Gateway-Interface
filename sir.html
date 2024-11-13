@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nearest Odd Numbers</title>
+</head>
+<body>
+    <h1>Nearest Odd Numbers Finder</h1>
+    <p>Enter numbers separated by commas:</p>
+    <input type="text" id="numberInput" placeholder="e.g., 1, 2, 3, 4, 5">
+    <button onclick="findNearestOddNumbers()">Submit</button>
+    
+    <h2>Nearest Odd Numbers:</h2>
+    <div id="result"></div>
+
+    <script>
+        function findNearestOddNumbers() {
+            const input = document.getElementById('numberInput').value;
+            const numbers = input.split(',').map(num => parseInt(num.trim())).filter(num => !isNaN(num));
+            const nearestOddNumbers = numbers.map(num => {
+                if (num % 2 === 0) {
+                    return num + 1; // If even, the nearest odd is num + 1
+                } else {
+                    return num; // If odd, return the number itself
+                }
+            });
+
+            // Display the result
+            document.getElementById('result').innerText = nearestOddNumbers.join(', ');
+        }
+    </script>
+</body>
+</html>

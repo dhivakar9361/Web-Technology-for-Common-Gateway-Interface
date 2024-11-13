@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rectangle Box</title>
+</head>
+<body>
+    <!-- Canvas element where the rectangle will be drawn -->
+    <canvas id="myCanvas" width="400" height="200" style="border:1px solid #000000;">
+        Your browser does not support the HTML5 canvas tag.
+    </canvas>
+
+    <script>
+        // Select the canvas element
+        const canvas = document.getElementById("myCanvas");
+        const ctx = canvas.getContext("2d");
+
+        // Set the rectangle color (optional)
+        ctx.fillStyle = "#4CAF50";  // Green color
+
+        // Draw the rectangle
+        ctx.fillRect(50, 50, 300, 100); // x, y, width, height
+    </script>
+</body>
+</html>

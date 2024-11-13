@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Floating Elements</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="box box1">Box 1</div>
+        <div class="box box2">Box 2</div>
+    </div>
+</body>
+</html>
+
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Container for both boxes */
+.container {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    margin: 50px auto;
+}
+
+/* First box */
+.box1 {
+    float: left;
+    width: 100px;
+    height: 100px;
+    background-color: lightblue;
+    position: relative;
+    z-index: 1; /* Brings this box on top */
+    opacity: 0.8;
+}
+
+/* Second box */
+.box2 {
+    float: right;
+    width: 100px;
+    height: 100px;
+    background-color: coral;
+    position: relative;
+    z-index: 0; /* Places this box below the first box */
+    opacity: 0.8;
+    margin-top: -50px; /* Adjust to make it overlap the first box */
+}

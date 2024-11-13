@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Calculator</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f7f7f7;
+        }
+
+        .container {
+            max-width: 400px;
+            width: 100%;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            font-size: 1rem;
+            display: block;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            font-size: 1rem;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            font-size: 1rem;
+            color: #fff;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 1.2rem;
+            text-align: center;
+            color: #333;
+        }
+
+        .warning {
+            color: #FF6347;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Attendance Calculator</h1>
+        <div class="form-group">
+            <label for="totalClasses">Total Classes:</label>
+            <input type="number" id="totalClasses" placeholder="Enter total classes" required>
+        </div>
+        <div class="form-group">
+            <label for="attendedClasses">Attended Classes:</label>
+            <input type="number" id="attendedClasses" placeholder="Enter attended classes" required>
+        </div>
+        <button onclick="calculateAttendance()">Calculate Attendance</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function calculateAttendance() {
+            const totalClasses = parseInt(document.getElementById("totalClasses").value);
+            const attendedClasses = parseInt(document.getElementById("attendedClasses").value);
+            const resultDiv = document.getElementById("result");
+
+            if (isNaN(totalClasses) || isNaN(attendedClasses) || totalClasses <= 0) {
+                resultDiv.innerHTML = "Please enter valid numbers for both fields.";
+                resultDiv.classList.remove("warning");
+                return;
+            }
+
+            const attendancePercentage = (attendedClasses / totalClasses) * 100;
+            resultDiv.innerHTML = `Your attendance is ${attendancePercentage.toFixed(2)}%.`;
+
+            if (attendancePercentage < 75) {
+                resultDiv.innerHTML += "<br><span class='warning'>Warning: Your attendance is below the required 75%.</span>";
+            } else {
+                resultDiv.classList.remove("warning");
+            }
+        }
+    </script>
+</body>
+</html>

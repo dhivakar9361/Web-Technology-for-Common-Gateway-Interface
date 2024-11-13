@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Number Operations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        input, button {
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Number Operations</h1>
+
+    <div>
+        <h2>Exponential Value</h2>
+        <input type="number" id="exponentialInput" placeholder="Enter a number" />
+        <button onclick="calculateExponential()">Calculate Exponential</button>
+        <p id="exponentialResult"></p>
+    </div>
+
+    <div>
+        <h2>Limit Decimal Digits</h2>
+        <input type="number" id="decimalInput" placeholder="Enter a number" />
+        <input type="number" id="decimalPlaces" placeholder="Decimal places" />
+        <button onclick="limitDecimal()">Limit Decimal</button>
+        <p id="decimalResult"></p>
+    </div>
+
+    <div>
+        <h2>Convert Number to String</h2>
+        <input type="number" id="stringInput" placeholder="Enter a number" />
+        <button onclick="convertToString()">Convert to String</button>
+        <p id="stringResult"></p>
+    </div>
+
+    <div>
+        <h2>Negative Infinity</h2>
+        <button onclick="showNegativeInfinity()">Show Negative Infinity</button>
+        <p id="infinityResult"></p>
+    </div>
+
+    <script>
+        function calculateExponential() {
+            const input = parseFloat(document.getElementById('exponentialInput').value);
+            const result = Math.exp(input);
+            document.getElementById('exponentialResult').innerText = `Exponential of ${input} is ${result}`;
+        }
+
+        function limitDecimal() {
+            const input = parseFloat(document.getElementById('decimalInput').value);
+            const places = parseInt(document.getElementById('decimalPlaces').value);
+            if (!isNaN(input) && !isNaN(places)) {
+                const result = input.toFixed(places);
+                document.getElementById('decimalResult').innerText = `Limited to ${places} decimal places: ${result}`;
+            } else {
+                document.getElementById('decimalResult').innerText = 'Please enter valid numbers.';
+            }
+        }
+
+        function convertToString() {
+            const input = parseFloat(document.getElementById('stringInput').value);
+            const result = input.toString();
+            document.getElementById('stringResult').innerText = `String representation: ${result}`;
+        }
+
+        function showNegativeInfinity() {
+            const result = Number.NEGATIVE_INFINITY;
+            document.getElementById('infinityResult').innerText = `Negative Infinity: ${result}`;
+        }
+    </script>
+</body>
+</html>
